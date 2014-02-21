@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Comment Vision コメント登録</title>
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<{if $data.comForbidStatus == 1}>
+	<font color='red'>エラーが発生しました。もう一度投稿して下さい。</font><br>
+	<input type="button" onclick="window.close(); return false;" value="閉じる">
+<{elseif $data.comForbidStatus == 2}>
+	<font color='red'>誰かがもうコメント書いちゃってます。</font><br>
+	<input type="button" onclick="window.close(); return false;" value="閉じる">
+<{else}>
+<{foreach from=$data.regErrorList item=errorMsg}>
+	<font color='red'><{$errorMsg}></font><br>
+<{/foreach}>
+<font color='red' id="jserror"></font><br>
+<br>
+<form name="form1" method="POST" action="commentReg.php">
+	<input type="hidden" name="mode" value="w">
+	<input type="hidden" name="topic_id" value="<{$data.topic_id}>">
+	<input type="hidden" name="comment_id" value="<{$data.comment_id}>">
+	<span style="color: red"; ><b>【必須】</b></span> コメント (最大50文字)<br>
+	<textarea name="comment" id="comment_area" rows="3" cols="20"  onkeydown="go();"></textarea><br><br>
+	名前 (最大10文字)<br>
+	<input name="name" id="name_area"type="text" value="<{$data.name}>" maxlength="10" size="15"><br><br>
+	<input type="button" onclick="window.close(); return false;" value="閉じる">
+	<input type="button" onclick="return send()" value="送信">
+</form>
+<{/if}>
+<script type="text/javascript">
+<!--
+window.onload = function(){
+	document.form1.comment.focus();
+}
+
+function go(){
+	//EnterキーならSubmit
+	if(window.event.keyCode==13) send();
+	return false;
+}
+
+function send(){
+	$com_length = document.getElementById('comment_area').value.length;
+	$name_length = document.getElementById('name_area').value.length;
+	if($com_length < 1 || $com_length > 50){
+		document.getElementById('jserror').innerHTML = "コメントが未入力か文字数がオーバーしています";
+	}else if($name_length > 10){
+		document.getElementById('jserror').innerHTML = "名前の文字数がオーバーしています";
+	} else {
+		document.form1.submit();
+	}
+	return false;
+
+}
+// -->
+</script>
+</body>
+</html>

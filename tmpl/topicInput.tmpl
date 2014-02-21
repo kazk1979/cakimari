@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Comment Vision トピック登録</title>
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<{foreach from=$data.errorList item=errorType}>
+<{if $errorType == 1}>
+<font color="red">登録に失敗してしまいました。。もう一度お願いします。。</font><br />
+<{elseif $errorType == 2}>
+<font color="red">そのトピックはもう登録されちゃってます</font><br />
+<{elseif $errorType == 3}>
+<font color="red">トピックは1文字〜30文字を入力して下さい</font><br />
+<{elseif $errorType == 4}>
+<font color="red">トピックの説明は200文字以下で入力して下さい</font><br />
+<{elseif $errorType == 5}>
+<font color="red">URLは200文字以下で入力して下さい</font><br />
+<{elseif $errorType == 6}>
+<font color="red">URLはhttp://またはhttps://から入力してください</font><br />
+<{/if}>
+<{/foreach}>
+<br />
+<form name="form1" method="POST" action="topicInput.php">
+<input type="hidden" name="mode" value="w">
+<span style="color: red"; ><b>【必須】</b></span> トピック  (最大30文字)<br />
+<input type="text" name="topic" size="30" maxlength="30"><br /><br />
+トピックの説明  (最大200文字)<br />
+<textarea name="topic_explanation" rows="5" cols="45"></textarea><br /><br />
+URL (最大200文字)<br />
+<div style="font-size: 0.8em">※<font color="red"><b>http://</b></font>または<font color="red"><b>https://</b></font>から入力してください</div>
+<input type="text" name="url" size="50" maxlength="200"><br /><br />
+<input type="button" onclick="window.close(); return false;" value="閉じる">
+　<input type="button" onclick="return send()" value="送信">
+</form>
+
+<script type="text/javascript">
+<!--
+
+window.onload = function(){
+	document.form1.topic.focus();
+}
+function send(){
+	document.form1.submit();
+	return false;
+}
+// -->
+</script>
+</body>
+</html>

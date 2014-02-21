@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="時事ネタから近所のうわさ話まで、なんでも書いちゃおう！" />
+<meta name="Keywords" content="掲示板" />
+<title><{if $data.topicName != ""}><{$data.topicName|escape:'html'}>-<{/if}>CAKIMARI</title>
+<link rel="shortcut icon" href="cmn/img/favicon.ico" />
+<link href="cmn/css/layout.css" rel="stylesheet" type="text/css" media="all" />
+<link href="cmn/css/contents.css" rel="stylesheet"  />
+<link rel="stylesheet" href="cmn/css/style1.css" type="text/css" id="jstyle" />
+<script language="javascript" type="text/javascript" src="cmn/js/jquery-1.8.3.min.js"></script>
+<script language="javascript" type="text/javascript" src="cmn/js/jquery.cookie.js"></script>
+<script language="javascript" type="text/javascript" src="cmn/js/jquery.formtips.1.2.6.min.js"></script>
+<script language="javascript" type="text/javascript" src="cmn/js/common.js"></script>
+</head>
+<body>
+<div id="Body">
+	<!--▼▼ヘッダ▼▼-->
+	<div id="Header">
+		<p><a href="index.php"><img src="cmn/img/logo.gif" width="235" height="28" alt="cakimari" /></a>&nbsp;かんたん書き込み リアルビューBBS</p>
+		<dl>
+			<dt>カラー選択</dt>
+			<dd>
+				<ul>
+					<li class="Gray"><a onclick="jstyle('cmn/css/style1.css')">グレー</a></li>
+					<li class="Black"><a onclick="jstyle('cmn/css/style2.css')">ブラック</a></li>
+					<li class="White"><a onclick="jstyle('cmn/css/style3.css')">ホワイト</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+	<!--▲▲ヘッダ▲▲-->
+	<!--▼▼コンテンツ▼▼-->
+	<div id="Contents" class="clearfix">
+		<!--▼左-->
+		<div id="C_Left">
+			<!--▽-->
+			<div id="L_Text">
+				<h1><{$data.topicName|escape:'html'}></h1>
+				<p><{$data.topicExplanation|escape:'html'|mb_strimwidth:0:200:'…'|escape}></p>
+				<{if $data.topicUrl != ''}><p><a href="javascript:void(0)" onclick="openSourcePage('<{$data.topicUrl|escape:'html'}>')"><{$data.topicUrl|escape:'html'}></a></p><{/if}>
+			</div>
+			<!--△-->
+			<{if $data.totalTopicNum == 0}>
+			<font color='red' id="commentError">一致するトピックは見つかりませんでした</font><br>
+			<p><a href="index.php">&lt;&lt;TOP</a></p>
+			<{/if}>
+			<br>
+			<{if $data.totalTopicNum != 0}>
+			<form action="commentReg.php" method="post" id="Contribute">
+				<input type="hidden" name="mode" value="w">
+				<input type="hidden" name="topic_id" value="<{$data.topic_id}>" />
+				<input name="comment" title="<{$data.default_comment}>" type="text" class="Text" id="com_textarea" />
+				<span class="Submit"><a href="javascript:void(0)" onclick="sendCommentNoRand(this);return false;"><img src="cmn/img/contribute.gif" /></a></span>
+			</form>
+			<table id="Cakimarispace">
+				<tr>
+					<td id="com11" class="f_small comment">&nbsp;</td>
+					<td id="com12" class="f_big comment">&nbsp;</td>
+					<td id="com13" class="f_medium comment comment">&nbsp;</td>
+				</tr>
+				<tr>
+					<td id="com21" class="comment">&nbsp;</td>
+					<td id="com22" class="comment">&nbsp;</td>
+					<td id="com23" class="comment">&nbsp;</td>
+				</tr>
+				<tr>
+					<td id="com31" class="comment">&nbsp;</td>
+					<td id="com32" class="comment">&nbsp;</td>
+					<td id="com33" class="comment">&nbsp;</td>
+				</tr>
+				<tr>
+					<td id="com41" class="comment">&nbsp;</td>
+					<td id="com42" class="comment">&nbsp;</td>
+					<td id="com43" class="comment">&nbsp;</td>
+				</tr>
+				<tr>
+					<td id="com51" class="comment">&nbsp;</td>
+					<td id="com52" class="comment">&nbsp;</td>
+					<td id="com53" class="comment">&nbsp;</td>
+				</tr>
+				<tr>
+					<td id="com61" class="comment">&nbsp;</td>
+					<td id="com62" class="comment">&nbsp;</td>
+					<td id="com63" class="comment">&nbsp;</td>
+				</tr>
+			</table>
+			<!--▽AD--
+			<ul id="Left_AD">
+				<li><img src="cmn/img/ad02.gif" width="700" height="133" alt="" /></li>
+				<li><img src="cmn/img/ad02.gif" width="700" height="133" alt="" /></li>
+				<li><img src="cmn/img/ad02.gif" width="700" height="133" alt="" /></li>
+			</ul>
+			<!--△AD-->
+			<{/if}><{* if $data.totalTopicNum == 0 *}>
+		</div>
+		<!--▲左-->
+		<!--▼右-->
+		<div id="C_Right">
+			<!--▽AD--
+			<ul id="Right_AD">
+				<li><img src="cmn/img/ad01.jpg" width="420" height="289" alt="" /></li>
+			</ul>
+			<!--△AD-->
+			<form action="index.php" method="post" id="Search">
+				<input type="hidden" name="searchType" value="1" />
+				<input name="topicSearch" title="<{$data.defaultTopicSearch}>" type="text" size="30" class="Text" value="<{$data.topicSearch}>" />
+				<input type="image" src="cmn/img/search.gif" name="Submit" value="検索" title="検索" class="Submit" />
+			</form>
+			<!--▽板リスト-->
+			<div class="R_List">
+				<ul>
+				<{foreach from=$data.topicList item=topicInfo}>
+				<{if $topicInfo.topic_id == $data.topic_id}>
+					<li><{$topicInfo.topic|escape:'html'}> (<{$topicInfo.comment_cnt}>)</li>
+				<{else}>
+					<li><a href="javascript:void(0)" onclick="changeCommentArea('<{$topicInfo.topic_id}>', '<{$data.pageInfo.currentPage}>', '<{$data.topicSearch}>');return false;"><{$topicInfo.topic|escape:'html'}></a> (<{$topicInfo.comment_cnt}>)</li>
+				<{/if}>
+				<{/foreach}>
+				</ul>
+				<p><{if $data.pageInfo.hasFirstPageNaviFlg === true}><a href="index.php?page=1">&lt;</a><{/if}>
+				<{foreach $data.pageInfo.pageList item=pageNum}>
+				<{if $pageNum == $data.pageInfo.currentPage}>
+				<strong><{$pageNum}></strong>
+				<{else}>
+				<a href="index.php?page=<{$pageNum}>"><{$pageNum}></a>
+				<{/if}>
+				<{/foreach}>
+				<{if $data.pageInfo.hasLastPageNaviFlg === true}>
+				<a href="index.php?page=<{$data.pageInfo.totalPageNum}>">&gt;</a>
+				<{/if}></p>
+				<p><a href="topicInput.php" onclick="window.open(this.href, '_blank', 'width=500, height=500');return false;">トピックを作る</a></p>
+			</div>
+			<!--△板リスト-->
+		</div>
+		<!--▲右-->
+		<!--▼フッタ-->
+		<div id="Footer" class="clearfix">
+			<p>Copyright(c) Cakimari All rights reserved.</p>
+			<ul><!--
+				--><!--<li><a href="about.html">かきまりについて</a></li>--><!--
+				<!--<li><a href="#">プライバシーと利用規約</a></li>
+				<li><a href="#">広告</a></li>-->
+			</ul>
+		</div>
+		<!--▲フッタ-->
+	</div>
+	<!--▲▲コンテンツ▲▲-->
+</div>
+
+<script type="text/javascript" language="javascript">
+<!--
+function getDatalist(){
+	$.ajax({
+		url: 'commentGet.php?date='+(new Date().getTime())+'&topic_id=<{$data.topic_id}>',
+		dataType: 'json',
+		success : function(data){
+			for(var i=0;i<=(data.length-1);i++){
+				var commentElement = document.getElementById(data[i]['commentId']);
+				if(commentElement == '') continue;
+
+				var commentId = '#'+data[i]['commentId'];
+				var topicId = '<{$data.topic_id}>';
+				if(topicId !== '' && data[i]['comment'] == ''){
+					commentElement.innerHTML = '';
+					$(commentId).css("cursor", "pointer");
+				} else {
+					$(commentId).css("cursor", "default");
+					commentElement.innerHTML = data[i]['comment'];
+					$(commentId).css("color", data[i]['fontColor']);
+					$(commentId).addClass(data[i]['class']);
+					$(commentId).attr("title", data[i]['name']);
+				}
+			}
+		}
+	})
+}
+
+$(function(){
+	$(".comment").click(function(event){
+		var xPos = event.clientX;
+		var yPos = event.clientY;
+
+		window.open('commentReg.php?topic_id=<{$data.topic_id}>&comment_id='+this.id, '_blank', 'screenX='+xPos+', screenY='+yPos+', width=400, height=250');
+		return false;
+	});
+
+	getDatalist();
+	setInterval(function(){
+        getDatalist();
+  },5000);
+});
+
+function openSourcePage(url){
+	if(window.confirm(url+'へ遷移しようとしています')){
+		w = screen.availWidth/2;
+		h = screen.availHeight;
+
+		window.open(url, '_blank', 'width='+w+', height='+h);
+
+	}
+}
+
+function sendCommentNoRand(){
+	var text_len = document.getElementById("com_textarea").value.length;
+
+	if(text_len < 1 || text_len > 50){
+		document.getElementById('commentError').innerHTML = "コメントが未入力か文字数がオーバーしています";
+	} else {
+		document.getElementById("Contribute").submit();
+	}
+}
+
+function changeCommentArea(topic_id, page, keyWord){
+	var loc = "index.php?topic_id="+topic_id;
+	if(page != '')    loc += "&page="+page;
+	if(keyWord != '') loc += "&searchType=2&topicSearch="+keyWord;
+	location.href = loc;
+}
+// -->
+</script>
+</body>
+</html>

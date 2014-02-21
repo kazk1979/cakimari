@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/*
+-----------------------------------------------------
+◆◆かきまり　スタイルシート◆◆
+◇◇◇◇グレーバージョン◇◇◇◇
+-----------------------------------------------------
+-----------------------------------------------------
+【改訂履歴】
+13/11/06：初版作成
+-----------------------------------------------------
+*/
+
+
+a:link {
+	color:#5252ce;
+	text-decoration:none;
+	}
+
+a:visited {
+	color:#5252ce;
+	text-decoration:none;
+	}
+
+a:hover {
+	color:#5252ce;
+	text-decoration:underline;
+	}
+	
+a:active{ 
+	color:#5252ce;
+	text-decoration:underline;
+	}
+
+body {
+	background-color:#e4e4e4;
+	color:#333;
+	}
+	
+div#Header dl dd ul li.Gray a {
+	border:2px solid #777;
+	background-color:#fff;
+	}
+	
+div#Header dl dd ul li.Gray a:hover {
+	background-color:#fff;
+	}

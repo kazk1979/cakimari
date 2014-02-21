@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+/*
+-----------------------------------------------------
+◆◆かきまり　スタイルシート◆◆
+◇◇◇◇◇◇本文用定義◇◇◇◇◇◇
+-----------------------------------------------------
+-----------------------------------------------------
+【改訂履歴】
+13/11/06：初版作成
+-----------------------------------------------------
+*/
+
+/*◆◆本文（テキスト部分）◆◆*/
+
+div#L_Text {
+	width:706px;
+	padding-bottom:15px;
+	font-size:14px;
+	}
+
+div#L_Text h1{
+	margin:0 auto ;
+	margin-bottom:10px;
+	font-size:24px;
+	line-height:135%;
+	}
+	
+div#L_Text h2{
+	margin:30px 0px 15px 0px;
+	padding-bottom:10px;
+	border-bottom:1px solid #777;
+	line-height:125%;
+	}
+	
+div#L_Text h3{
+	margin:30px 0px 15px 0px;
+	padding-bottom:10px;
+	border-bottom:1px dotted #999;
+	line-height:125%;
+	}
+	
+div#L_Text p {
+	margin:10px 0px;
+	line-height:150%;
+	}
+	
+div#L_Text ul,
+div#L_Text ol {
+	margin:0;
+	padding:0;
+	}
+	
+div#L_Text li {
+	margin:0px 0px 10px 30px;
+	line-height:135%;
+	}
+	
+div#L_Text dl dt {
+	margin-bottom:10px;
+	font-weight:bold;
+	}
+
+div#L_Text dl dd {
+	margin-left:1em;
+	}
+
+/*◆◆投稿欄◆◆*/
+
+div#C_Left form#Contribute input.Text {
+	width:500px;
+	height:30px;
+	font-size:14px;
+	}
+	
+/*◆◆テーブル表示部◆◆*/
+	
+table#Cakimarispace {
+	width:706px;
+	margin-bottom:40px;
+	border-collapse:collapse;
+	border-spacing:0;
+	}
+
+table#Cakimarispace td {
+	width:33%;
+	height:70px;
+	padding:10px;
+	border:4px #e4e4e4 solid;
+	background-color: #fff;
+	text-align:center;
+	vertical-align:middle;
+	line-height:135%;
+	}
+	
+table#Cakimarispace td:hover {
+	background-color: #ccc;
+	}
+	
+table#Cakimarispace td.f_big {
+	font-size:40px;
+	}
+	
+table#Cakimarispace td.f_medium{
+	font-size:20px;
+	}
+	
+table#Cakimarispace td.f_small{
+	font-size:12px;
+	}
+	
+/*◆◆広告◆◆*/
+
+div#C_Left ul#Left_AD {
+	width:700px;
+	margin:20px 0px 0px 0px;
+	padding:0;
+	list-style:none;
+	}
+
+div#C_Left ul#Left_AD li {
+	width:700px;
+	height:133px;
+	margin-bottom:20px;
+	}
+	
+div#C_Right ul#Right_AD {
+	width:420px;
+	margin:0px 0px 0px 0px;
+	padding:0;
+	list-style:none;
+	}
+	
+div#C_Right ul#Right_AD li {
+	width:420px;
+	height:289px;
+	margin-bottom:20px;
+	}
+	
+/*◆◆検索◆◆*/
+
+div#C_Right form#Search {
+	padding-top:20px;
+	}
+
+div#C_Right form#Search input.Text {
+	width:320px;
+	height:30px;
+	margin-bottom:10px;
+	border:solid 1px #ccc;
+	}
+
+/*◆◆板のリスト◆◆*/
+
+div#C_Right div.R_List {
+	width:420px;
+	margin-bottom:40px;
+	line-height:22px;
+	text-align:left;
+	}
+	
+div#C_Right div.R_List ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+	
+div#C_Right div.R_List ul li {
+	margin-bottom:10px;
+	font-size:14px;
+	line-height:130%;
+	}
+	
+div#C_Right div.R_List p {
+	text-align:center;
+	}
+	
+/*◆◆フォーム部品◆◆*/
+
+form {
+	margin:0px 0px 10px 0px;
+	pading:0;
+	}
+
+form input {
+	margin:0;
+	padding:0;
+	height:30px;
+	border:1px solid #ccc;
+	vertical-align:top;
+	font-size:13px;
+	line-height:30px;
+	}
+	
+form input.Text {
+	padding-left:5px;
+	}
+	
+form input.submit {
+	margin-left:5px;
+	}
+	
+form input.tipped {
+	color: #aaa;
+	}

@@ -1,0 +1,265 @@
+@charset "UTF-8";
+
+/*
+-----------------------------------------------------
+◆◆かきまり　スタイルシート◆◆
+◇◇◇◇◇◇レイアウト定義◇◇◇◇◇◇
+-----------------------------------------------------
+-----------------------------------------------------
+【改訂履歴】
+13/11/06：初版作成
+-----------------------------------------------------
+*/
+
+/* ---◆◆clearfix◆◆--*/
+
+.clearfix:after {
+  content: ".";  /* 新しい要素を作る */
+  display: block;  /* ブロックレベル要素に */
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  min-height: 1px;
+}
+
+* html .clearfix {
+  height: 1px;
+  /*¥*//*/
+  height: auto;
+  overflow: hidden;
+  /**/
+}
+
+/* ---◆◆汎用設定◆◆--*/
+
+.hide {display:none;}
+.left {text-align:left;}
+.center {text-align:center;}
+.right {text-align:right;}
+.bold {font-weight:bold;}
+.small {font-size:70% !important ;}
+.nowrap {white-space:nowrap;}
+.outmargin {margin:0.7em 0em 0.7em 0em;}
+.clear {clear:both;}
+
+/* --◆隠し要素--*/
+
+hr {
+	display:none;
+	}
+	
+/* --◆強調--*/
+
+em {
+	color:#c33;
+	font-style:normal;
+	}
+	
+strong {
+	
+	}
+	
+/* --◆各タグ基本設定--*/
+
+img {
+	border:none;
+	}
+
+/*リンク*/
+
+a:link {
+	color:#5252ce;
+	text-decoration:none;
+	}
+
+a:visited {
+	color:#5252ce;
+	text-decoration:none;
+	}
+
+a:hover {
+	color:#5252ce;
+	text-decoration:underline;
+	}
+	
+a:active{ 
+	color:#5252ce;
+	text-decoration:underline;
+	}
+	
+/* --------------◆◆全ページ共通設定◆◆--------------*/
+
+/* --◆ボディ設定--*/
+
+body,p,td {
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", sans-serif;
+	}
+	
+body { font-size:14px;	}
+	
+/*IE6*/
+* html body {font-size:100%;}
+
+/*IE7*/
+*:first-child+html body {font-size:100%;}
+
+
+body {
+	margin:0;
+	padding:0;
+	background-color:#e4e4e4;
+	background-image:url(../img/head_bg.gif);
+	background-repeat:repeat-x;
+	text-align:center;
+	}
+	
+div#Body {
+	width:1200px;
+	margin:0px auto;
+	padding-bottom:10px;
+	}
+	
+/*◆◆ヘッダ設定◆◆*/
+	
+div#Header {
+	width:100%;
+	height:50px;
+	padding-top:11px;
+	margin:0px auto;
+	position:relative;
+	}
+
+div#Header p {
+	margin:0;
+	padding:0;
+	position:absolute;
+	left:0px;
+	top:10px;
+	font-size:12px;
+	font-weight:bold;
+	line-height:100%;
+	}
+	
+div#Header p img {
+	margin-right:10px;
+	vertical-align:text-bottom;
+	}
+
+div#Header dl {
+	margin:0;
+	padding:3px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	}
+	
+div#Header dl dt {
+	margin:0;
+	padding:0;
+	font-size:12px;
+	font-weight:bold;
+	line-height:18px;
+	text-align:right;
+	white-space:nowrap;
+	display:inline;
+	}
+	
+div#Header dl dd {
+	margin:0;
+	padding:0;
+	display:inline;
+	}
+	
+div#Header dl dd ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+
+div#Header dl dd ul li {
+	display:inline;
+	}
+	
+div#Header dl dd ul li a {
+	display:block;
+	cursor:pointer;
+	width:4.5em;
+	margin:0px 0px 0px 2px;
+	background-color:#efefef;
+	border:2px solid #ccc;
+	text-align:center;
+	float:left;
+	font-size:12px;
+	line-height:20px;
+	white-space:nowrap;
+	}
+	
+div#Header dl dd ul li a:link {text-decoration:none; color:#444; }
+div#Header dl dd ul li a:visited {text-decoration:none; color:#444; }
+div#Header dl dd ul li a:hover {text-decoration:none; color:#444; background-color:#fff100;}
+	
+/*◆◆コンテンツエリア設定◆◆*/
+	
+div#Contents {
+	width:1200px;
+	margin:0px auto;
+	padding:15px 0px 0px 0px;
+	}
+	
+div#C_Left {
+	width:780px;
+	float:left;
+	display:inline;
+	text-align:left;
+	}
+	
+div#C_Right {
+	width:420px;
+	float:right;
+	display:inline;
+	text-align:left;
+	}
+	
+/*◆◆フッタ設定◆◆*/
+	
+div#Footer {
+	width:1200px;
+	margin:0px auto;
+	padding:30px 0px;
+	clear:both;
+	border-top:1px solid #444;
+	}
+	
+div#Footer p {
+	margin:0;
+	padding:0;
+	float:left;
+	font-size:70%;
+	}
+	
+div#Footer ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	float:right;
+	font-size:12px;
+	line-height:100%;
+	text-align:center;
+	border-left:1px solid #666;
+	}
+	
+div#Footer ul li {
+	display:inline;
+	margin-left:-1px;
+	margin-right:0px;
+	}
+	
+div#Footer ul li a {
+	padding:0px 10px;
+	border-left:1px solid #666;
+	border-right:1px solid #666;
+	white-space:nowrap;
+	}

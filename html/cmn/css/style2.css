@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/*
+-----------------------------------------------------
+◆◆かきまり　スタイルシート◆◆
+◇◇◇◇ブラックバージョン◇◇◇◇
+-----------------------------------------------------
+-----------------------------------------------------
+【改訂履歴】
+13/11/06：初版作成
+-----------------------------------------------------
+*/
+
+
+a:link {
+	color:#fff799;
+	text-decoration:none;
+	}
+
+a:visited {
+	color:#fff799;
+	text-decoration:none;
+	}
+
+a:hover {
+	color:#fff799;
+	text-decoration:underline;
+	}
+	
+a:active{ 
+	color:#fff799;
+	text-decoration:underline;
+	}
+
+/* --◆ボディ設定--*/
+
+body {
+	background-color:#000;
+	color:#fff;
+	}
+	
+body td {
+	color:#000;
+	}
+	
+div#Header p {
+	color:#333;
+	}
+	
+div#Header dl dt {
+	color:#333;
+	}
+
+div#Header dl dd ul li a {
+	color:#444;
+	}
+
+div#Header dl dd ul li.Black a {
+	border:2px solid #777;
+	background-color:#fff;
+	color:#444;
+	}
+	
+div#Header dl dd ul li.Black a:hover {
+	background-color:#fff;
+	}
