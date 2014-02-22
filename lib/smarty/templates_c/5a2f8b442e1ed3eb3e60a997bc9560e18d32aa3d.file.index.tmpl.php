@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?php /* Smarty version Smarty-3.1.12, created on 2014-03-18 21:56:44
+         compiled from "/Applications/XAMPP/htdocs/aws/cakimari/tmpl/index.tmpl" */ ?>
+<?php /*%%SmartyHeaderCode:474890861532055dc021c27-77243012%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '5a2f8b442e1ed3eb3e60a997bc9560e18d32aa3d' => 
+    array (
+      0 => '/Applications/XAMPP/htdocs/aws/cakimari/tmpl/index.tmpl',
+      1 => 1395147382,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '474890861532055dc021c27-77243012',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_532055dc4291e1_37952939',
+  'variables' => 
+  array (
+    'data' => 0,
+    'topicInfo' => 0,
+    'pageNum' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_532055dc4291e1_37952939')) {function content_532055dc4291e1_37952939($_smarty_tpl) {?><?php echo '<?xml';?> version="1.0" encoding="UTF-8" <?php echo '?>';?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
@@ -6,7 +34,8 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="時事ネタから近所のうわさ話まで、なんでも書いちゃおう！" />
 <meta name="Keywords" content="掲示板" />
-<title><{if $data.topicName != ""}><{$data.topicName|escape:'html'}>-<{/if}>CAKIMARI</title>
+<title><?php if ($_smarty_tpl->tpl_vars['data']->value['topicName']!=''){?><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['topicName'], ENT_QUOTES, 'UTF-8', true);?>
+-<?php }?>CAKIMARI</title>
 <link rel="shortcut icon" href="cmn/img/favicon.ico" />
 <link href="cmn/css/layout.css" rel="stylesheet" type="text/css" media="all" />
 <link href="cmn/css/contents.css" rel="stylesheet"  />
@@ -42,21 +71,27 @@
 		<div id="C_Left">
 			<!--▽-->
 			<div id="L_Text">
-				<h1><{$data.topicName|escape:'html'}></h1>
-				<p><{$data.topicExplanation|escape:'html'|mb_strimwidth:0:200:'…'|escape}></p>
-				<{if $data.topicUrl != ''}><p><a href="javascript:void(0)" onclick="openSourcePage('<{$data.topicUrl|escape:'html'}>')"><{$data.topicUrl|escape:'html'}></a></p><{/if}>
+				<h1><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['topicName'], ENT_QUOTES, 'UTF-8', true);?>
+</h1>
+				<p><?php echo htmlspecialchars(mb_strimwidth(htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['topicExplanation'], ENT_QUOTES, 'UTF-8', true),0,200,'…'), ENT_QUOTES, 'UTF-8', true);?>
+</p>
+				<?php if ($_smarty_tpl->tpl_vars['data']->value['topicUrl']!=''){?><p><a href="javascript:void(0)" onclick="openSourcePage('<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['topicUrl'], ENT_QUOTES, 'UTF-8', true);?>
+')"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['data']->value['topicUrl'], ENT_QUOTES, 'UTF-8', true);?>
+</a></p><?php }?>
 			</div>
 			<!--△-->
-			<{if $data.totalTopicNum == 0}>
+			<?php if ($_smarty_tpl->tpl_vars['data']->value['totalTopicNum']==0){?>
 			<font color='red' id="commentError">一致するトピックは見つかりませんでした</font><br>
 			<p><a href="index.php">&lt;&lt;TOP</a></p>
-			<{/if}>
+			<?php }?>
 			<br>
-			<{if $data.totalTopicNum != 0}>
+			<?php if ($_smarty_tpl->tpl_vars['data']->value['totalTopicNum']!=0){?>
 			<form action="commentReg.php" method="post" id="Contribute">
 				<input type="hidden" name="mode" value="w">
-				<input type="hidden" name="topic_id" value="<{$data.topic_id}>" />
-				<input name="comment" title="<{$data.default_comment}>" type="text" class="Text" id="com_textarea" />
+				<input type="hidden" name="topic_id" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['topic_id'];?>
+" />
+				<input name="comment" title="<?php echo $_smarty_tpl->tpl_vars['data']->value['default_comment'];?>
+" type="text" class="Text" id="com_textarea" />
 				<span class="Submit"><a href="javascript:void(0)" onclick="sendCommentNoRand(this);return false;"><img src="cmn/img/contribute.gif" /></a></span>
 			</form>
 			<table id="Cakimarispace">
@@ -98,7 +133,7 @@
 				<li><img src="cmn/img/ad02.gif" width="700" height="133" alt="" /></li>
 			</ul>
 			<!--△AD-->
-			<{/if}><{* if $data.totalTopicNum == 0 *}>
+			<?php }?>
 		</div>
 		<!--▲左-->
 		<!--▼右-->
@@ -110,32 +145,53 @@
 			<!--△AD-->
 			<form action="index.php" method="post" id="Search">
 				<input type="hidden" name="searchType" value="1" />
-				<input name="topicSearch" title="<{$data.defaultTopicSearch}>" type="text" size="30" class="Text" value="<{$data.topicSearch}>" />
+				<input name="topicSearch" title="<?php echo $_smarty_tpl->tpl_vars['data']->value['defaultTopicSearch'];?>
+" type="text" size="30" class="Text" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['topicSearch'];?>
+" />
 				<input type="image" src="cmn/img/search.gif" name="Submit" value="検索" title="検索" class="Submit" />
 			</form>
 			<!--▽板リスト-->
 			<div class="R_List">
 				<ul>
-				<{foreach from=$data.topicList item=topicInfo}>
-				<{if $topicInfo.topic_id == $data.topic_id}>
-					<li><{$topicInfo.topic|escape:'html'}> (<{$topicInfo.comment_cnt}>)</li>
-				<{else}>
-					<li><a href="javascript:void(0)" onclick="changeCommentArea('<{$topicInfo.topic_id}>', '<{$data.pageInfo.currentPage}>', '<{$data.topicSearch}>');return false;"><{$topicInfo.topic|escape:'html'}></a> (<{$topicInfo.comment_cnt}>)</li>
-				<{/if}>
-				<{/foreach}>
+				<?php  $_smarty_tpl->tpl_vars['topicInfo'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['topicInfo']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['data']->value['topicList']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['topicInfo']->key => $_smarty_tpl->tpl_vars['topicInfo']->value){
+$_smarty_tpl->tpl_vars['topicInfo']->_loop = true;
+?>
+				<?php if ($_smarty_tpl->tpl_vars['topicInfo']->value['topic_id']==$_smarty_tpl->tpl_vars['data']->value['topic_id']){?>
+					<li><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['topicInfo']->value['topic'], ENT_QUOTES, 'UTF-8', true);?>
+ (<?php echo $_smarty_tpl->tpl_vars['topicInfo']->value['comment_cnt'];?>
+)</li>
+				<?php }else{ ?>
+					<li><a href="javascript:void(0)" onclick="changeCommentArea('<?php echo $_smarty_tpl->tpl_vars['topicInfo']->value['topic_id'];?>
+', '<?php echo $_smarty_tpl->tpl_vars['data']->value['pageInfo']['currentPage'];?>
+', '<?php echo $_smarty_tpl->tpl_vars['data']->value['topicSearch'];?>
+');return false;"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['topicInfo']->value['topic'], ENT_QUOTES, 'UTF-8', true);?>
+</a> (<?php echo $_smarty_tpl->tpl_vars['topicInfo']->value['comment_cnt'];?>
+)</li>
+				<?php }?>
+				<?php } ?>
 				</ul>
-				<p><{if $data.pageInfo.hasFirstPageNaviFlg === true}><a href="index.php?page=1">&lt;</a><{/if}>
-				<{foreach $data.pageInfo.pageList item=pageNum}>
-				<{if $pageNum == $data.pageInfo.currentPage}>
-				<strong><{$pageNum}></strong>
-				<{else}>
-				<a href="index.php?page=<{$pageNum}>"><{$pageNum}></a>
-				<{/if}>
-				<{/foreach}>
-				<{if $data.pageInfo.hasLastPageNaviFlg === true}>
-				<a href="index.php?page=<{$data.pageInfo.totalPageNum}>">&gt;</a>
-				<{/if}></p>
-				<p><a href="topicInput.php" class="new_topic">トピックを作る</a></p>
+				<p><?php if ($_smarty_tpl->tpl_vars['data']->value['pageInfo']['hasFirstPageNaviFlg']===true){?><a href="index.php?page=1">&lt;</a><?php }?>
+				<?php  $_smarty_tpl->tpl_vars['pageNum'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pageNum']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['data']->value['pageInfo']['pageList']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['pageNum']->key => $_smarty_tpl->tpl_vars['pageNum']->value){
+$_smarty_tpl->tpl_vars['pageNum']->_loop = true;
+?>
+				<?php if ($_smarty_tpl->tpl_vars['pageNum']->value==$_smarty_tpl->tpl_vars['data']->value['pageInfo']['currentPage']){?>
+				<strong><?php echo $_smarty_tpl->tpl_vars['pageNum']->value;?>
+</strong>
+				<?php }else{ ?>
+				<a href="index.php?page=<?php echo $_smarty_tpl->tpl_vars['pageNum']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['pageNum']->value;?>
+</a>
+				<?php }?>
+				<?php } ?>
+				<?php if ($_smarty_tpl->tpl_vars['data']->value['pageInfo']['hasLastPageNaviFlg']===true){?>
+				<a href="index.php?page=<?php echo $_smarty_tpl->tpl_vars['data']->value['pageInfo']['totalPageNum'];?>
+">&gt;</a>
+				<?php }?></p>
+				<p><a href="topicInput.php" class="new_window">トピックを作る</a></p>
 			</div>
 			<!--△板リスト-->
 		</div>
@@ -158,7 +214,8 @@
 <!--
 function getDatalist(){
 	$.ajax({
-		url: 'commentGet.php?date='+(new Date().getTime())+'&topic_id=<{$data.topic_id}>',
+		url: 'commentGet.php?date='+(new Date().getTime())+'&topic_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['topic_id'];?>
+',
 		dataType: 'json',
 		success : function(data){
 			for(var i=0;i<=(data.length-1);i++){
@@ -166,7 +223,8 @@ function getDatalist(){
 				if(commentElement == '') continue;
 
 				var commentId = '#'+data[i]['commentId'];
-				var topicId = '<{$data.topic_id}>';
+				var topicId = '<?php echo $_smarty_tpl->tpl_vars['data']->value['topic_id'];?>
+';
 				if(topicId !== '' && data[i]['comment'] == ''){
 					commentElement.innerHTML = '';
 					$(commentId).css("cursor", "pointer");
@@ -185,23 +243,15 @@ function getDatalist(){
 $(document).ready( function() {
 	$(".comment").live("hover", function(){
 		$(this).fancybox({
-			'href': 'commentReg.php?topic_id=<{$data.topic_id}>&comment_id='+this.id,
-			'width': 300,
-			'height': 250,
+			'href': 'commentReg.php?topic_id=<?php echo $_smarty_tpl->tpl_vars['data']->value['topic_id'];?>
+&comment_id='+this.id,
+			'width': 740,
+			'height': 450,
 			'padding': 0,
 			'overlayOpacity': 0.6,
 			'overlayColor': '#000',
 			'type': 'iframe'
 		});
-	});
-
-	$(".new_topic").fancybox({
-		'width': 500,
-		'height': 400,
-		'padding': 0,
-		'overlayOpacity': 0.6,
-		'overlayColor': '#000',
-		'type': 'iframe'
 	});
 
 	$(".new_window").fancybox({
@@ -249,3 +299,4 @@ function changeCommentArea(topic_id, page, keyWord){
 </script>
 </body>
 </html>
+<?php }} ?>

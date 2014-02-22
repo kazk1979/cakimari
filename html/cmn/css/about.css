@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+/*
+-----------------------------------------------------
+◆◆かきまり　スタイルシート◆◆
+◇◇◇「かきまりについて」ページ用定義◇◇◇
+-----------------------------------------------------
+-----------------------------------------------------
+【改訂履歴】
+14/02/20：初版作成
+-----------------------------------------------------
+*/
+
+body {
+	margin:0;
+	padding:0;
+	background-color:#666;
+	text-align:left;
+	color:#fff;
+	}
+	
+div#Contents {
+	width:720px;
+	margin:0px 0px 0px 0px;
+	text-align:left;
+	}
+	
+div#Text {
+	padding:20px;
+	font-size:14px;
+	}
+
+div#Text h1{
+	margin:0 auto ;
+	margin-bottom:10px;
+	font-size:24px;
+	line-height:135%;
+	}
+	
+div#Text h2{
+	margin:30px 0px 15px 0px;
+	padding-bottom:10px;
+	border-bottom:1px solid #ccc;
+	line-height:125%;
+	}
+	
+div#Text h3{
+	margin:30px 0px 15px 0px;
+	padding-bottom:10px;
+	border-bottom:1px dotted #ccc;
+	line-height:125%;
+	}
+	
+div#Text p {
+	margin:10px 0px;
+	line-height:150%;
+	}
+	
+div#Text ul,
+div#Text ol {
+	margin:0;
+	padding:0;
+	}
+	
+div#Text li {
+	margin:0px 0px 10px 30px;
+	line-height:135%;
+	}
+	
+div#Text dl dt {
+	margin-bottom:10px;
+	font-weight:bold;
+	}
+
+div#Text dl dd {
+	margin-left:1em;
+	}
+
+
+div#Contents p.Copy {
+	margin-top:30px;
+	padding:10px 0px 0px 0px;
+	border-top:1px solid #ccc;
+	font-size:70%;
+	text-align:right;
+	}

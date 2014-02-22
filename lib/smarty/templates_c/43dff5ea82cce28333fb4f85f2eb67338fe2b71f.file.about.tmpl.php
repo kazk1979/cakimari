@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?php /* Smarty version Smarty-3.1.12, created on 2014-03-12 21:47:26
+         compiled from "/Applications/XAMPP/htdocs/aws/cakimari/tmpl/about.tmpl" */ ?>
+<?php /*%%SmartyHeaderCode:22948108753205641411253-16764763%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '43dff5ea82cce28333fb4f85f2eb67338fe2b71f' => 
+    array (
+      0 => '/Applications/XAMPP/htdocs/aws/cakimari/tmpl/about.tmpl',
+      1 => 1394628440,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '22948108753205641411253-16764763',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.12',
+  'unifunc' => 'content_532056414b6093_91173990',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_532056414b6093_91173990')) {function content_532056414b6093_91173990($_smarty_tpl) {?><?php echo '<?xml';?> version="1.0" encoding="UTF-8" <?php echo '?>';?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
@@ -58,3 +80,4 @@
 </div>
 </body>
 </html>
+<?php }} ?>

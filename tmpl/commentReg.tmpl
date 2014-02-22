@@ -7,10 +7,8 @@
 <body>
 <{if $data.comForbidStatus == 1}>
 	<font color='red'>エラーが発生しました。もう一度投稿して下さい。</font><br>
-	<input type="button" onclick="window.close(); return false;" value="閉じる">
 <{elseif $data.comForbidStatus == 2}>
 	<font color='red'>誰かがもうコメント書いちゃってます。</font><br>
-	<input type="button" onclick="window.close(); return false;" value="閉じる">
 <{else}>
 <{foreach from=$data.regErrorList item=errorMsg}>
 	<font color='red'><{$errorMsg}></font><br>
@@ -25,7 +23,6 @@
 	<textarea name="comment" id="comment_area" rows="3" cols="20"  onkeydown="go();"></textarea><br><br>
 	名前 (最大10文字)<br>
 	<input name="name" id="name_area"type="text" value="<{$data.name}>" maxlength="10" size="15"><br><br>
-	<input type="button" onclick="window.close(); return false;" value="閉じる">
 	<input type="button" onclick="return send()" value="送信">
 </form>
 <{/if}>
