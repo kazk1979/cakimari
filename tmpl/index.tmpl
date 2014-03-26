@@ -187,7 +187,7 @@ $(document).ready( function() {
 		$(this).fancybox({
 			'href': 'commentReg.php?topic_id=<{$data.topic_id}>&comment_id='+this.id,
 			'width': 300,
-			'height': 250,
+			'height': 300,
 			'padding': 0,
 			'overlayOpacity': 0.6,
 			'overlayColor': '#000',
@@ -197,7 +197,7 @@ $(document).ready( function() {
 
 	$(".new_topic").fancybox({
 		'width': 500,
-		'height': 400,
+		'height': 450,
 		'padding': 0,
 		'overlayOpacity': 0.6,
 		'overlayColor': '#000',
@@ -221,9 +221,10 @@ $(document).ready( function() {
 
 function openSourcePage(url){
 	if(window.confirm(url+'へ遷移しようとしています')){
-		w = screen.availWidth/2;
+		w = screen.availWidth/3;
 		h = screen.availHeight*2/3;
-
+//		w = screen.availWidth/2;
+//		h = screen.availHeight*2/3;
 		window.open(url, '_blank', 'width='+w+', height='+h+', scrollbars=yes, resizable=yes');
 
 	}

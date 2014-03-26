@@ -6,14 +6,14 @@
 </head>
 <body>
 <{if $data.comForbidStatus == 1}>
-	<font color='red'>エラーが発生しました。もう一度投稿して下さい。</font><br>
+	<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;">エラーが発生しました。もう一度投稿して下さい。</p>
 <{elseif $data.comForbidStatus == 2}>
-	<font color='red'>誰かがもうコメント書いちゃってます。</font><br>
+	<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;">誰かがもうコメント書いちゃってます。</p>
 <{else}>
 <{foreach from=$data.regErrorList item=errorMsg}>
-	<font color='red'><{$errorMsg}></font><br>
+	<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;"><{$errorMsg}></pn>
 <{/foreach}>
-<font color='red' id="jserror"></font><br>
+<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;"></p>
 <br>
 <form name="form1" method="POST" action="commentReg.php">
 	<input type="hidden" name="mode" value="w">

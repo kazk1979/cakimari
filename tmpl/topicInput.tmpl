@@ -7,17 +7,17 @@
 <body>
 <{foreach from=$data.errorList item=errorType}>
 <{if $errorType == 1}>
-<font color="red">登録に失敗してしまいました。。もう一度お願いします。。</font><br />
+<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;">登録に失敗してしまいました。。もう一度お願いします。。</p>
 <{elseif $errorType == 2}>
-<font color="red">そのトピックはもう登録されちゃってます</font><br />
+<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;">そのトピックはもう登録されちゃってます</p>
 <{elseif $errorType == 3}>
-<font color="red">トピックは1文字〜30文字を入力して下さい</font><br />
+<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;">トピックは1文字〜30文字を入力して下さい</p>
 <{elseif $errorType == 4}>
-<font color="red">トピックの説明は200文字以下で入力して下さい</font><br />
+<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;">トピックの説明は200文字以下で入力して下さい</p>
 <{elseif $errorType == 5}>
-<font color="red">URLは200文字以下で入力して下さい</font><br />
+<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;">URLは200文字以下で入力して下さい</p>
 <{elseif $errorType == 6}>
-<font color="red">URLはhttp://またはhttps://から入力してください</font><br />
+<p id="jserror" style="margin:0px 5px 10px 5px; color:#f00; background-color:#ff0;">URLはhttp://またはhttps://から入力してください</p>
 <{/if}>
 <{/foreach}>
 <br />
