@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+/*
+-----------------------------------------------------
+◆◆かきまり　スタイルシート◆◆
+◇◇◇◇黄色バージョン◇◇◇◇
+-----------------------------------------------------
+-----------------------------------------------------
+【改訂履歴】
+14/04/07：初版作成
+-----------------------------------------------------
+*/
+
+
+body {
+	background-color:#ff0;
+	color:#333;
+	}
+
+body td {
+        color:#000;
+        }
+
+div#Header p {
+        color:#333;
+        }
+
+div#Header dl dt {
+        color:#333;
+        }
+
+div#Header dl dd ul li a {
+        color:#444;
+        }
+
+div#Header dl dd ul li.Yellow a {
+        border:2px solid #777;
+        background-color:#fff;
+        color:#444;
+        }
+
+div#Header dl dd ul li.Yellow a:hover {
+        background-color:#fff;
+        }
+
